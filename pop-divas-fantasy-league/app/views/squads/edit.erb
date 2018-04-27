@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+  </head>
+  <body>
+
+
+      <div class="flash" style="color: #fff">
+          <% if flash.has?(:message) %>
+                  <%= flash[:message] %>
+                <% end %>
+      </div>
+      <h1>Update Squad:</h1>
+      <form action="/squads/<%=@squad.id %>" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <label for="name">Name: <input type="text" name="squad[name]" id="name" value="<%= @squad.name%>"></label>
+        <label for="lead_singer">Lead Singer:<input type="text" name="squad[lead_singer]" id="lead_singer" value="<%= @squad.lead_singer%>">
+        <label for="back_up_singer_1">Back-Up Singer:<input type="text" name="squad[back_up_singer_1]" id="back_up_singer_1" value="<%= @squad.back_up_singer_1%>">
+        <label for="back_up_singer_2">Back-Up Singer:<input type="text" name="squad[back_up_singer_2]" id="back_up_singer_2" value="<%= @squad.back_up_singer_2%>">
+        <br></br>
+        <button>Update</button>
+      </form>
+  </body>
+</html>

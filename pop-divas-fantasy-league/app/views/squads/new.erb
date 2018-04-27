@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+  </head>
+  <body>
+
+    <h1>Create A New Squad.</h1>
+    <form action="/squads" method="post">
+
+      <label>Squad Name:</label>
+      <input  type="text" name="squad[name]" placeholder="Enter Squad Name" required>
+      <label>Lead Singer</label>
+      <input  type="text" name="squad[lead_singer]" placeholder="Enter Lead Singer" required>
+      <label>Back-Up Singer</label>
+      <input  type="text" name="squad[back_up_singer_1]" placeholder="Enter Back-Up Singer" required>
+      <label>Back-Up Singer</label>
+      <input  type="text" name="squad[back_up_singer_2]" placeholder="Enter Back-Up Singer" required>
+      <br></br>
+      <button>Create</button>
+    </form>
+  </body>
+</html>

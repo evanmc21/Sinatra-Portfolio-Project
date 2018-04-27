@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+</head>
+
+  <body>
+
+
+      <div class="flash" style="color: #fff">
+          <% if flash.has?(:message) %>
+                  <%= flash[:message] %>
+                <% end %>
+
+    <h2>Sign Up</h2>
+    <form action="/signup" method="POST">
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Username:">
+      <label>Email</label>
+      <input type="text" name="email" placeholder="Email:">
+      <label>Password</label>
+      <input type="text" name="password" placeholder="Password:">
+      <br></br>
+      <button>Sign Up</button>
+    </form>
+  </body>
+</html>

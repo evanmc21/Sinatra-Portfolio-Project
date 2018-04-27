@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+</head>
+<body>
+    <h1> Your Squad</h1>
+
+      <h2>Squad Name: <%= @squad.name %></h2>
+      <h3>Lead Singer: <%= @squad.lead_singer %></h3>
+      <h3>Back-Up Singer: <%= @squad.back_up_singer_1 %></h3>
+      <h3>Back-Up Singer: <%= @squad.back_up_singer_2 %></h3>
+
+      <h3><a href="/squads/<%=@squad.id%>/edit">Edit Squad</a></h3>
+      <br></br>
+      <form action="/squads/<%= @squad.id %>/delete" method ="post">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <button>Delete Squad</button>
+        <br></br>
+        <br></br>
+        <a href="/squads">View All Squads</a>
+      </form>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="flash" style="color: #fff">
+      <% if flash.has?(:message) %>
+              <%= flash[:message] %>
+            <% end %>
+
+  <h2>Login</h2>
+    <form action="/login" method="POST">
+      <input type="text" name="username" placeholder="Username:">
+      <br></br>
+      <input type="password" name="password" placeholder="Password:">
+      <br></br>
+      <button>Log In</button>
+    </form>
+    </body>
+</html>

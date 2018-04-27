@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+</head>
+<body>
+<h1>Squads.</h1>
+  <% if @user == current_user %>
+  <% Squad.all.each do |squad| %>
+  <h2>Squad Name : <%= squad.name %></h2>
+  <h3>Squad Owner : <%= squad.user.username %></h3>
+  <a href='/squads/<%= squad.id %>'>View Squad</a>
+  <% end %>
+  <% end %>
+  <br></br>
+  <br></br>
+<button><a href="/squads/new">Create A New Squad</a></button>
+<br></br>
+<br></br>
+<br></br>
+<a href="/logout">Log Out</a>
+</body>
+</html>
