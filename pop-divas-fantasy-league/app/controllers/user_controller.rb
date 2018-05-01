@@ -12,13 +12,13 @@ class UserController < ApplicationController
   end
 
   post '/signup' do
-    @user = User.new(params)
-    if @user.username == "" || @user.email == ""
+    @user = User.create(username: params[:username], email: params[:email], password: params[:password])
+    session[:id] = @user.id
+    if logged_in?
+      redirect '/users/success'
+    else
       flash[:message] = "Skrrrt! Please enter a username, email, and password to sign up."
       redirect '/signup'
-    elsif @user.save
-    session[:id] = @user.id
-      redirect '/users/index'
     end
   end
 
@@ -45,6 +45,11 @@ end
   get'/logout' do
     session.clear
     redirect '/'
+  end
+
+  get '/users/success' do
+    @user = User.find_by_slug(params[:slug])
+    erb :'users/index'
   end
 
 
