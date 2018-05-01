@@ -17,7 +17,6 @@ class UserController < ApplicationController
       flash[:message] = "Skrrrt! Please enter a username, email, and password to sign up."
       redirect '/signup'
     elsif @user.save
-    # @user = User.create(username: params[:username], email: params[:email], password: params[:password])
     session[:id] = @user.id
       redirect '/users/index'
     end
