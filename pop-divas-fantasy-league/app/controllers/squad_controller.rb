@@ -46,7 +46,7 @@ class SquadController < ApplicationController
 
    patch '/squads/:id' do
      @squad = Squad.find(params[:id])
-     if  current_user.id == @squad.user_id
+     if @squad.user_id == current_user.id
        @squad.update(params[:squad])
        @squad.save
        redirect "/squads/#{@squad.id}"
@@ -57,7 +57,7 @@ class SquadController < ApplicationController
 
    delete '/squads/:id/delete' do
       @squad = Squad.find(params[:id])
-      if current_user.id == @squad.user_id
+      if @squad.user_id == current_user.id
         @squad.delete
        redirect '/squads'
      else

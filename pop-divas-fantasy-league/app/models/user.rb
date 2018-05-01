@@ -5,15 +5,15 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :email, uniqueness: true
 
-  def slug
-    self.username.gsub(" ", "-").downcase
-  end
-
-  def self.find_by_slug(slug)
-    self.find do |user|
-      user.slug == slug
-    end
-  end
+  # def slug
+  #   self.username.gsub(" ", "-").downcase
+  # end
+  #
+  # def self.find_by_slug(slug)
+  #   self.find do |user|
+  #     user.slug == slug
+  #   end
+  # end
 
 
 end
